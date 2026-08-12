@@ -310,4 +310,44 @@ mod tests {
         assert!(parse(&[]).is_err());
         assert!(parse(&[0x00, 0x00]).is_err()); // flags but no power field
     }
+
+    #[test]
+    fn accumulated_torque() {
+        let flags: u16 = 1 << 2; // torque present
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&150i16.to_le_bytes()); // power
+        data.extend_from_slice(&320u16.to_le_bytes()); // raw 320 -> 10.0 Nm
+        let m = parse(&data).unwrap();
+        assert_eq!(m.accumulated_torque_nm, Some(10.0));
+    }
+
+    #[test]
+    fn extreme_force_and_torque() {
+        let flags: u16 = (1 << 6) | (1 << 7); // extreme force + extreme torque present
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&200i16.to_le_bytes()); // power
+        data.extend_from_slice(&850i16.to_le_bytes()); // force max
+        data.extend_from_slice(&(-120i16).to_le_bytes()); // force min
+        data.extend_from_slice(&45i16.to_le_bytes()); // torque max
+        data.extend_from_slice(&(-10i16).to_le_bytes()); // torque min
+        let m = parse(&data).unwrap();
+        let force = m.extreme_force_newtons.unwrap();
+        assert_eq!(force.max, 850);
+        assert_eq!(force.min, -120);
+        let torque = m.extreme_torque_nm.unwrap();
+        assert_eq!(torque.max, 45);
+        assert_eq!(torque.min, -10);
+    }
+
+    #[test]
+    fn top_and_bottom_dead_spot_angles() {
+        let flags: u16 = (1 << 9) | (1 << 10); // top + bottom dead spot present
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&300i16.to_le_bytes()); // power
+        data.extend_from_slice(&90u16.to_le_bytes());
+        data.extend_from_slice(&270u16.to_le_bytes());
+        let m = parse(&data).unwrap();
+        assert_eq!(m.top_dead_spot_angle_deg, Some(90));
+        assert_eq!(m.bottom_dead_spot_angle_deg, Some(270));
+    }
 }

@@ -161,4 +161,59 @@ mod tests {
     fn too_short_errors() {
         assert!(parse(&[]).is_err());
     }
+
+    #[test]
+    fn total_distance_u24_le() {
+        let flags: u16 = (1 << 0) | (1 << 4); // speed absent, total distance present
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&[0x40, 0x42, 0x0F]); // 0x0F4240 -> 1_000_000 metres
+        let m = parse(&data).unwrap();
+        assert_eq!(m.total_distance, Some(1_000_000));
+    }
+
+    #[test]
+    fn average_speed_and_cadence() {
+        let flags: u16 = (1 << 0) | (1 << 1) | (1 << 3); // speed absent, avg speed + avg cadence
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&1800u16.to_le_bytes()); // raw 1800 -> 18.00 km/h
+        data.extend_from_slice(&160u16.to_le_bytes()); // raw 160 -> 80.0 rpm
+        let m = parse(&data).unwrap();
+        assert_eq!(m.average_speed, Some(18.0));
+        assert_eq!(m.average_cadence, Some(80.0));
+    }
+
+    #[test]
+    fn resistance_level_and_average_power() {
+        let flags: u16 = (1 << 0) | (1 << 5) | (1 << 7); // speed absent, resistance + avg power
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&(-3i16).to_le_bytes());
+        data.extend_from_slice(&220i16.to_le_bytes());
+        let m = parse(&data).unwrap();
+        assert_eq!(m.resistance_level, Some(-3));
+        assert_eq!(m.average_power, Some(220));
+    }
+
+    #[test]
+    fn expended_energy_block_keeps_offsets() {
+        let flags: u16 = (1 << 0) | (1 << 8); // speed absent, expended energy block present
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.extend_from_slice(&500u16.to_le_bytes()); // total_energy
+        data.extend_from_slice(&600u16.to_le_bytes()); // energy_per_hour
+        data.push(10); // energy_per_minute
+        let m = parse(&data).unwrap();
+        assert_eq!(m.total_energy, Some(500));
+        assert_eq!(m.energy_per_hour, Some(600));
+        assert_eq!(m.energy_per_minute, Some(10));
+    }
+
+    #[test]
+    fn metabolic_equivalent_and_remaining_time() {
+        let flags: u16 = (1 << 0) | (1 << 10) | (1 << 12); // speed absent, MET + remaining time
+        let mut data = vec![flags as u8, (flags >> 8) as u8];
+        data.push(85); // raw 85 -> 8.5 MET
+        data.extend_from_slice(&1200u16.to_le_bytes());
+        let m = parse(&data).unwrap();
+        assert_eq!(m.metabolic_equivalent, Some(8.5));
+        assert_eq!(m.remaining_time_secs, Some(1200));
+    }
 }

@@ -19,10 +19,16 @@ Minimum supported Rust version: 1.74 (see `rust-version` in `Cargo.toml`).
 | `power` | Cycling Power Measurement (0x2A63) | power, pedal power balance (L/R split), crank/wheel revolutions, torque |
 | `csc` | CSC Measurement (0x2A5B) | wheel/crank revolution data |
 | `ftms` | Indoor Bike Data (0x2AD2) | combined speed/cadence/power/HR, as broadcast by many smart trainers |
+| `zwift_click` | Zwift Click controller (non-standard service `00000001-19CA-4651-86E5-FA29DCDD09D1`) | two-paddle gear-shifter remote; unlike the others, needs a handshake write before it notifies — see the module docs |
 
 Also exposes `revolutions_per_minute`, a small helper for turning two
 consecutive revolution-counter readings into cadence/speed, handling the
 `u16` event-time counter's wraparound correctly.
+
+The Zwift Play controllers (dual joystick units, as opposed to the Click's
+two-paddle remote) aren't supported yet — they negotiate an encrypted
+session (ECDH + AES-256-CCM) rather than the Click's plaintext protocol, a
+meaningfully bigger and more security-sensitive addition.
 
 ## Example
 
@@ -49,6 +55,13 @@ Rate service. Run it with:
 cargo run --example scan_and_parse
 ```
 
+The Zwift Click's extra handshake step (see above) is shown separately in
+[`examples/zwift_click.rs`](examples/zwift_click.rs):
+
+```sh
+cargo run --example zwift_click
+```
+
 ## Why this exists
 
 There's no existing Rust crate that parses these cycling-specific GATT
@@ -61,6 +74,15 @@ implementation tested against real hardware — then reimplemented
 independently here rather than ported, with a few deliberate correctness
 fixes (e.g. Instantaneous Power, force, and torque fields are signed per
 spec, not unsigned).
+
+The Zwift Click isn't a standard GATT profile — Zwift has never published
+one — so there's no equivalent reference implementation to check against.
+Its module was instead cross-checked against two independent community
+reverse-engineering write-ups: the `ajchellew/zwiftplay` GitHub project's
+protocol notes, and `cagnulein/qdomyos-zwift` (GPL-3.0) — read for the
+protocol facts and reimplemented independently, the same policy applied to
+`pycycling` above, never copied, so this crate's permissive license isn't
+compromised.
 
 ## Contributing
 
@@ -76,7 +98,11 @@ clippy, fmt across the MSRV), but so far exercised only against hand-built
 byte sequences (see each module's tests), not yet against real hardware.
 Extreme Angles (Cycling Power Measurement, a 12-bit-packed field) is parsed
 far enough to skip correctly but not decoded into values — rare on consumer
-power meters, low priority.
+power meters, low priority. Similarly, two bytes in the Zwift Click's
+button-state frame have no confirmed meaning in any source consulted and
+are skipped rather than guessed at (see `zwift_click`'s module docs). The
+Zwift Play controllers (dual joysticks, encrypted session) aren't
+supported at all yet.
 
 ## License
 

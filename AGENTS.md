@@ -45,6 +45,10 @@ One module per GATT characteristic under `src/`:
 - `src/heart_rate.rs` — Heart Rate Measurement (0x2A37).
 - `src/csc.rs` — CSC Measurement (0x2A5B).
 - `src/ftms.rs` — Indoor Bike Data (0x2AD2).
+- `src/zwift_click.rs` — Zwift Click controller (non-standard Zwift
+  accessory service, not a Bluetooth SIG characteristic). Also the one
+  module with an outbound handshake constant (`HANDSHAKE_REQUEST`), since
+  the device stays silent until the app writes it.
 - `src/reader.rs` — internal, not part of the public API: a little-endian
   byte cursor (`Reader`) with bounds-checked reads that every parser goes
   through, since GATT payloads are sequences of optional fixed-width

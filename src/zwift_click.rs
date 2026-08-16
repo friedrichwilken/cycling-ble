@@ -18,11 +18,11 @@
 //! `cagnulein/qdomyos-zwift`'s button-frame handling, GPL-3.0 — read for
 //! the facts, reimplemented independently here rather than ported, per the
 //! same policy this crate already applies to `pycycling`), then corrected
-//! against a live capture from a real Click on 2026-08-14 (see
-//! `done-tasks.md`) — the opcode and frame layout below are what the
-//! hardware actually sends, not the original write-ups' guesses. The Click
-//! is the simple, unencrypted member of the Zwift accessory family: unlike
-//! the Play controllers, it never negotiates a session key.
+//! against a live capture from a real Click on 2026-08-14 — the opcode and
+//! frame layout below are what the hardware actually sends, not the
+//! original write-ups' guesses. The Click is the simple, unencrypted
+//! member of the Zwift accessory family: unlike the Play controllers, it
+//! never negotiates a session key.
 
 use crate::reader::Reader;
 use crate::ParseError;
@@ -129,9 +129,9 @@ mod tests {
     }
 
     // Byte sequences below are taken directly from a live capture against
-    // real Click hardware on 2026-08-14 (see `done-tasks.md`), not
-    // hand-guessed — the crate's original assumed frame layout (opcode
-    // 0x37, one whole byte per paddle) never matched real hardware.
+    // real Click hardware on 2026-08-14, not hand-guessed — the crate's
+    // original assumed frame layout (opcode 0x37, one whole byte per
+    // paddle) never matched real hardware.
 
     #[test]
     fn neither_paddle_pressed() {

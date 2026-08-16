@@ -3,7 +3,7 @@
 [![CI](https://github.com/friedrichwilken/cycling-ble/actions/workflows/ci.yml/badge.svg)](https://github.com/friedrichwilken/cycling-ble/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
-Parsers for Bluetooth LE cycling GATT characteristics — pure byte-parsing,
+Parsers for Bluetooth LE cycling [GATT](https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-54/out/en/host/generic-attribute-profile--gatt-.html) (Generic Attribute Profile) characteristics — pure byte-parsing,
 no BLE transport dependency. Pair it with any central-role BLE library
 (e.g. [`btleplug`](https://crates.io/crates/btleplug),
 [`bluest`](https://crates.io/crates/bluest)) to turn raw notification

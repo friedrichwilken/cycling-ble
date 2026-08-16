@@ -18,8 +18,8 @@ build:
 # grep -vi: cargo test's own harness lines ("running N tests", "test
 # result: ... finished in 0.0s") are lowercase and would collide with a
 # case-insensitive match meant for cargo's capitalized build-status lines,
-# silently swallowing the pass/fail summary (bit `dwartrain` once — same
-# fix ported here). Warning blocks are dropped in full (start line through
+# silently swallowing the pass/fail summary (a mistake worth avoiding
+# twice). Warning blocks are dropped in full (start line through
 # the next blank line), not just their first line, so code-snippet/note
 # lines don't leak through. pipestatus[1] propagates cargo's real exit
 # code past awk in the pipe.

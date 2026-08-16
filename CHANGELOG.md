@@ -20,6 +20,9 @@ pre-release.
   consecutive revolution-counter readings into cadence/speed.
 - `justfile` with filtered `check`/`build`/`test`/`clippy`/`fmt`/`clean`
   targets.
+- Zwift Click controller support (`zwift_click` module): handshake
+  request, button-state parsing (`ClickButtonState`), and battery/idle
+  frame handling for the non-standard Zwift accessory service.
 
 ### Fixed
 

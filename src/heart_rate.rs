@@ -23,8 +23,11 @@ pub struct HeartRateMeasurement {
 }
 
 const VALUE_FORMAT_UINT16: u8 = 1 << 0;
-const SENSOR_CONTACT_FEATURE_SUPPORTED: u8 = 1 << 1;
-const SENSOR_CONTACT_DETECTED: u8 = 1 << 2;
+// Per the Bluetooth HRS v1.0 spec's Flags field, these two are easy to
+// swap: bit2 is "feature supported", bit1 is "contact detected" (only
+// meaningful when bit2 is set) — not the other way around.
+const SENSOR_CONTACT_FEATURE_SUPPORTED: u8 = 1 << 2;
+const SENSOR_CONTACT_DETECTED: u8 = 1 << 1;
 const ENERGY_EXPENDED_PRESENT: u8 = 1 << 3;
 const RR_INTERVAL_PRESENT: u8 = 1 << 4;
 
@@ -85,7 +88,7 @@ mod tests {
 
     #[test]
     fn uint16_bpm_with_contact_and_energy() {
-        // bit0 (u16 bpm) | bit1 (contact feature) | bit2 (contact detected) | bit3 (energy)
+        // bit0 (u16 bpm) | bit1 (contact detected) | bit2 (contact feature) | bit3 (energy)
         let flags = 0b0000_1111;
         let data = [flags, 0x2C, 0x01, 0xF4, 0x01]; // bpm=300, energy=500
         let m = parse(&data).unwrap();
@@ -97,11 +100,23 @@ mod tests {
     #[test]
     fn contact_feature_supported_but_not_detected() {
         // The case a naive "either bit set" check gets wrong: feature
-        // supported (bit1) but NOT currently detected (bit2 clear).
-        let flags = 0b0000_0010;
+        // supported (bit2) but NOT currently detected (bit1 clear).
+        let flags = 0b0000_0100;
         let data = [flags, 70];
         let m = parse(&data).unwrap();
         assert_eq!(m.sensor_contact_detected, Some(false));
+    }
+
+    #[test]
+    fn contact_bit_set_without_feature_support_yields_none() {
+        // bit1 set (would look like "contact detected") but bit2 clear
+        // (feature not supported at all) must yield None, not Some(_) —
+        // this is the case the feature/detected bits being swapped gets
+        // wrong.
+        let flags = 0b0000_0010;
+        let data = [flags, 70];
+        let m = parse(&data).unwrap();
+        assert_eq!(m.sensor_contact_detected, None);
     }
 
     #[test]

@@ -94,8 +94,11 @@ conventions. Found a security issue? Please follow the reporting process in
 ## Status
 
 Early — the public API is fully documented and covered by CI (build, test,
-clippy, fmt across the MSRV), but so far exercised only against hand-built
-byte sequences (see each module's tests), not yet against real hardware.
+clippy, fmt across the MSRV). The `power`, `heart_rate`, `csc`, and `ftms`
+modules are so far exercised only against hand-built byte sequences (see
+each module's tests), not yet against real hardware; `zwift_click` has
+additionally been verified against a live capture from real Click
+hardware (2026-08-14).
 Extreme Angles (Cycling Power Measurement, a 12-bit-packed field) is parsed
 far enough to skip correctly but not decoded into values — rare on consumer
 power meters, low priority. Similarly, two bytes in the Zwift Click's

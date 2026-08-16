@@ -20,6 +20,9 @@ jobs:
       # runner image by default.
       - run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
       - run: cargo test --all-targets
+      # zwift-click is opt-in and undocumented, but still gets tested so
+      # it doesn't silently bit-rot while hidden.
+      - run: cargo test --all-targets --features zwift-click
 
   clippy:
     name: cargo clippy
@@ -32,6 +35,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
       - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo clippy --all-targets --features zwift-click -- -D warnings
 
   fmt:
     name: cargo fmt --check

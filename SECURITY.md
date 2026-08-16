@@ -14,9 +14,10 @@ discuss.
 
 ## What's in scope
 
-`cycling-ble` parses Bluetooth LE GATT payloads (Cycling Power, Heart
-Rate, CSC, and FTMS Indoor Bike Data) that originate from external,
-untrusted BLE devices — a payload could come from a misbehaving,
+`cycling-ble` parses Bluetooth LE GATT and vendor-protocol payloads
+(Cycling Power, Heart Rate, CSC, FTMS Indoor Bike Data, and the Zwift
+Click controller) that originate from external, untrusted BLE devices —
+a payload could come from a misbehaving,
 non-conformant, or actively hostile peripheral. The crate's core
 security-relevant property is that this input can never crash the
 consuming application: every parser is built on bounds-checked reads

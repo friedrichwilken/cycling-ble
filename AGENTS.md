@@ -48,7 +48,11 @@ One module per GATT characteristic under `src/`:
 - `src/zwift_click.rs` — Zwift Click controller (non-standard Zwift
   accessory service, not a Bluetooth SIG characteristic). Also the one
   module with an outbound handshake constant (`HANDSHAKE_REQUEST`), since
-  the device stays silent until the app writes it.
+  the device stays silent until the app writes it. **Experimental**:
+  gated behind the opt-in `zwift-click` Cargo feature (not in `default`),
+  not mentioned in `README.md`. Build/test/clippy it explicitly with
+  `--features zwift-click` — it's invisible to the plain `just` targets
+  otherwise, so don't let it silently bit-rot.
 - `src/reader.rs` — internal, not part of the public API: a little-endian
   byte cursor (`Reader`) with bounds-checked reads that every parser goes
   through, since GATT payloads are sequences of optional fixed-width

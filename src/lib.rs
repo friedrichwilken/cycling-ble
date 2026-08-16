@@ -1,6 +1,6 @@
 //! Parsers for Bluetooth LE cycling GATT characteristics: Cycling Power
-//! (including pedal power balance), Heart Rate, CSC, FTMS Indoor Bike
-//! Data, and the Zwift Click controller.
+//! (including pedal power balance), Heart Rate, CSC, and FTMS Indoor Bike
+//! Data.
 //!
 //! Pure byte-parsing with no BLE transport dependency — feed it the raw
 //! notification payload from any central-role BLE library (`btleplug`,
@@ -8,10 +8,7 @@
 //! real-device quirks were cross-checked against `pycycling`
 //! (<https://github.com/zacharyedwardbull/pycycling>, MIT licensed), a
 //! Python implementation tested against real hardware; this crate
-//! reimplements them independently rather than porting its code. The
-//! Zwift Click module was cross-checked the same way against two
-//! independent community reverse-engineering write-ups instead, since
-//! there's no official spec — see `zwift_click`'s module docs.
+//! reimplements them independently rather than porting its code.
 
 #![deny(missing_docs)]
 
@@ -26,12 +23,17 @@ pub mod heart_rate;
 /// Cycling Power Measurement (characteristic 0x2A63).
 pub mod power;
 /// Zwift Click controller (non-standard Zwift accessory service).
+///
+/// Experimental and undocumented elsewhere — opt in with the `zwift-click`
+/// feature. Not enabled by default.
+#[cfg(feature = "zwift-click")]
 pub mod zwift_click;
 
 pub use csc::CscMeasurement;
 pub use ftms::IndoorBikeData;
 pub use heart_rate::HeartRateMeasurement;
 pub use power::CyclingPowerMeasurement;
+#[cfg(feature = "zwift-click")]
 pub use zwift_click::ClickButtonState;
 
 /// A characteristic payload was shorter than its flags said it should be.

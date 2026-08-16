@@ -3,12 +3,20 @@ name = "cycling-ble"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.74"
-description = "Parsers for Bluetooth LE cycling GATT profiles and the Zwift Click controller: Cycling Power, Heart Rate, CSC, FTMS Indoor Bike Data. Pure byte-parsing, no BLE transport dependency."
+description = "Parsers for Bluetooth LE cycling GATT profiles: Cycling Power, Heart Rate, CSC, FTMS Indoor Bike Data. Pure byte-parsing, no BLE transport dependency."
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/friedrichwilken/cycling-ble"
 readme = "README.md"
 keywords = ["bluetooth", "ble", "cycling", "gatt", "power-meter"]
 categories = ["parser-implementations", "hardware-support"]
+
+[features]
+# Zwift Click controller support (src/zwift_click.rs) — experimental and
+# undocumented: the Click isn't a Bluetooth SIG characteristic, and this
+# module hasn't had the same documentation/stability pass as the four
+# standard GATT modules yet. Opt in explicitly; not part of the default
+# public API.
+zwift-click = []
 
 [dependencies]
 
@@ -17,3 +25,7 @@ btleplug = "0.12.0"
 futures = "0.3.34"
 tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros"] }
 uuid = "1.20.0"
+
+[[example]]
+name = "zwift_click"
+required-features = ["zwift-click"]

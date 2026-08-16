@@ -23,6 +23,8 @@ pre-release.
 - Zwift Click controller support (`zwift_click` module): handshake
   request, button-state parsing (`ClickButtonState`), and battery/idle
   frame handling for the non-standard Zwift accessory service.
+  **Experimental** — gated behind the opt-in `zwift-click` feature (not
+  in `default`) and not documented in `README.md` yet.
 
 ### Fixed
 

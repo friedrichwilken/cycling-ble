@@ -14,10 +14,9 @@ discuss.
 
 ## What's in scope
 
-`cycling-ble` parses Bluetooth LE GATT and vendor-protocol payloads
-(Cycling Power, Heart Rate, CSC, FTMS Indoor Bike Data, and the Zwift
-Click controller) that originate from external, untrusted BLE devices —
-a payload could come from a misbehaving,
+`cycling-ble` parses Bluetooth LE GATT payloads (Cycling Power, Heart
+Rate, CSC, and FTMS Indoor Bike Data) that originate from external,
+untrusted BLE devices — a payload could come from a misbehaving,
 non-conformant, or actively hostile peripheral. The crate's core
 security-relevant property is that this input can never crash the
 consuming application: every parser is built on bounds-checked reads
@@ -29,6 +28,10 @@ If you find an input that causes a panic, an out-of-bounds read, an
 integer overflow in debug builds, or otherwise violates that guarantee,
 that's a security bug worth reporting — please include the raw bytes of
 the payload and which characteristic/parser it was passed to.
+
+The optional `zwift-click` feature (off by default, experimental) follows
+the same bounds-checked-parsing discipline and is covered by the same
+guarantee, but hasn't had the same documentation/stability pass yet.
 
 ## What's out of scope
 

@@ -54,6 +54,7 @@ const MINUS_BIT: u8 = 0b0000_0010;
 /// State of the Click's two paddles, decoded from a button-state
 /// notification.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+#[non_exhaustive]
 pub struct ClickButtonState {
     /// The "+" paddle (gear up) is currently held down.
     pub plus_pressed: bool,

@@ -3,6 +3,7 @@ use crate::ParseError;
 
 /// Heart Rate Measurement (characteristic 0x2A37).
 #[derive(Debug, Clone, PartialEq)]
+#[non_exhaustive]
 pub struct HeartRateMeasurement {
     /// Heart rate in beats per minute.
     pub bpm: u16,
@@ -19,6 +20,7 @@ pub struct HeartRateMeasurement {
     /// kilojoules, if the sensor reports it.
     pub energy_expended_kj: Option<u16>,
     /// RR intervals in seconds, converted from the spec's 1/1024s units.
+    /// Empty when the payload carries no RR intervals.
     pub rr_intervals_secs: Vec<f32>,
 }
 

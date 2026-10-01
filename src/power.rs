@@ -3,6 +3,7 @@ use crate::ParseError;
 
 /// Which leg a [`PedalPowerBalance::percent`] value refers to.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[non_exhaustive]
 pub enum PedalPowerBalanceReference {
     /// The device reported a balance split but didn't say which leg it's
     /// measured from.
@@ -14,8 +15,9 @@ pub enum PedalPowerBalanceReference {
 /// Split of instantaneous power between the two pedals, if the power meter
 /// supports left/right balance measurement.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct PedalPowerBalance {
-    /// 0.0-100.0, meaning given by `reference`.
+    /// Percent, 0.0-100.0, resolution 0.5 %; meaning given by `reference`.
     pub percent: f32,
     /// Which leg `percent` is measured from.
     pub reference: PedalPowerBalanceReference,
@@ -24,18 +26,24 @@ pub struct PedalPowerBalance {
 /// A paired maximum/minimum value, as reported by Cycling Power's Extreme
 /// Force and Extreme Torque fields.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct MinMax<T> {
-    /// The largest value seen over the reporting period.
+    /// The largest value seen over the reporting period, in the unit of
+    /// the field this pair is reported in (e.g. Newtons for
+    /// [`CyclingPowerMeasurement::extreme_force_newtons`]).
     pub max: T,
-    /// The smallest value seen over the reporting period.
+    /// The smallest value seen over the reporting period, same unit as
+    /// [`MinMax::max`].
     pub min: T,
 }
 
 /// Cumulative wheel revolution count and the timestamp of the last one, as
 /// reported by Cycling Power Measurement's Wheel Revolution Data field.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct WheelRevolutionData {
-    /// Total wheel revolutions since the sensor was powered on. Wraps at
+    /// Total wheel revolutions (count) since the sensor was powered on.
+    /// Wraps at
     /// `u32::MAX`.
     pub cumulative_revolutions: u32,
     /// Raw device timestamp, resolution 1/2048s (see
@@ -48,8 +56,10 @@ pub struct WheelRevolutionData {
 /// Cumulative crank revolution count and the timestamp of the last one, as
 /// reported by Cycling Power Measurement's Crank Revolution Data field.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct CrankRevolutionData {
-    /// Total crank revolutions since the sensor was powered on. Wraps at
+    /// Total crank revolutions (count) since the sensor was powered on.
+    /// Wraps at
     /// `u16::MAX`.
     pub cumulative_revolutions: u16,
     /// Raw device timestamp, resolution 1/1024s (see
@@ -60,6 +70,7 @@ pub struct CrankRevolutionData {
 
 /// Cycling Power Measurement (characteristic 0x2A63).
 #[derive(Debug, Clone, PartialEq)]
+#[non_exhaustive]
 pub struct CyclingPowerMeasurement {
     /// Instantaneous power in watts. Signed per spec — regenerative
     /// trainers or a freewheeling/braking moment can report negative
@@ -81,10 +92,11 @@ pub struct CyclingPowerMeasurement {
     /// Maximum/minimum torque in Newton-metres over the reporting period,
     /// if the device measures it.
     pub extreme_torque_nm: Option<MinMax<i16>>,
-    /// Crank angle, in degrees, at which torque peaks (top dead spot).
-    pub top_dead_spot_angle_deg: Option<u16>,
-    /// Crank angle, in degrees, at which torque is at its minimum (bottom
+    /// Crank angle, in degrees (resolution 1°), at which torque peaks (top
     /// dead spot).
+    pub top_dead_spot_angle_deg: Option<u16>,
+    /// Crank angle, in degrees (resolution 1°), at which torque is at its
+    /// minimum (bottom dead spot).
     pub bottom_dead_spot_angle_deg: Option<u16>,
     /// Cumulative energy expended, in kilojoules, since the last reset.
     pub accumulated_energy_kj: Option<u16>,

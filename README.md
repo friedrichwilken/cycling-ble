@@ -11,6 +11,9 @@ payloads into typed readings.
 
 Minimum supported Rust version: 1.74 (see `rust-version` in `Cargo.toml`).
 
+What counts as the stable public API, and how changes to it are
+versioned, is set out in [STABILITY.md](STABILITY.md).
+
 ## Supported characteristics
 
 | Module | Characteristic | Notes |

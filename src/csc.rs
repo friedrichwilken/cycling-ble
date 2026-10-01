@@ -4,8 +4,10 @@ use crate::ParseError;
 /// Cumulative wheel revolution count and the timestamp of the last one, as
 /// reported by CSC Measurement's Wheel Revolution Data field.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct WheelRevolutionData {
-    /// Total wheel revolutions since the sensor was powered on. Wraps at
+    /// Total wheel revolutions (count) since the sensor was powered on.
+    /// Wraps at
     /// `u32::MAX`.
     pub cumulative_revolutions: u32,
     /// Raw device timestamp, resolution 1/1024s (see
@@ -18,8 +20,10 @@ pub struct WheelRevolutionData {
 /// Cumulative crank revolution count and the timestamp of the last one, as
 /// reported by CSC Measurement's Crank Revolution Data field.
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[non_exhaustive]
 pub struct CrankRevolutionData {
-    /// Total crank revolutions since the sensor was powered on. Wraps at
+    /// Total crank revolutions (count) since the sensor was powered on.
+    /// Wraps at
     /// `u16::MAX`.
     pub cumulative_revolutions: u16,
     /// Raw device timestamp, resolution 1/1024s (see
@@ -29,6 +33,7 @@ pub struct CrankRevolutionData {
 
 /// CSC (Cycling Speed and Cadence) Measurement (characteristic 0x2A5B).
 #[derive(Debug, Clone, Copy, PartialEq, Default)]
+#[non_exhaustive]
 pub struct CscMeasurement {
     /// Present when the sensor supports wheel-revolution reporting (e.g. a
     /// speed sensor).

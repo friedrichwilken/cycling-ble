@@ -6,24 +6,25 @@ use crate::ParseError;
 /// trainers broadcast instead of (or alongside) the separate Cycling Power
 /// and CSC services.
 #[derive(Debug, Clone, Copy, PartialEq, Default)]
+#[non_exhaustive]
 pub struct IndoorBikeData {
-    /// km/h
+    /// km/h, resolution 0.01 km/h.
     pub instantaneous_speed: Option<f32>,
-    /// km/h, averaged over the elapsed workout so far.
+    /// km/h, resolution 0.01 km/h, averaged over the elapsed workout so far.
     pub average_speed: Option<f32>,
-    /// rpm
+    /// rpm, resolution 0.5 rpm.
     pub instantaneous_cadence: Option<f32>,
-    /// rpm, averaged over the elapsed workout so far.
+    /// rpm, resolution 0.5 rpm, averaged over the elapsed workout so far.
     pub average_cadence: Option<f32>,
-    /// metres
+    /// metres, resolution 1 m.
     pub total_distance: Option<u32>,
     /// Unitless resistance-level setting reported by the trainer.
     pub resistance_level: Option<i16>,
-    /// watts
+    /// watts, resolution 1 W.
     pub instantaneous_power: Option<i16>,
-    /// watts, averaged over the elapsed workout so far.
+    /// watts, resolution 1 W, averaged over the elapsed workout so far.
     pub average_power: Option<i16>,
-    /// kcal
+    /// kcal, resolution 1 kcal.
     pub total_energy: Option<u16>,
     /// kcal/h, current expenditure rate.
     pub energy_per_hour: Option<u16>,
@@ -31,7 +32,7 @@ pub struct IndoorBikeData {
     pub energy_per_minute: Option<u8>,
     /// Heart rate in bpm, if the trainer has its own HR input.
     pub heart_rate_bpm: Option<u8>,
-    /// Metabolic equivalent of task (METs).
+    /// Metabolic equivalent of task (METs), resolution 0.1 MET.
     pub metabolic_equivalent: Option<f32>,
     /// Seconds elapsed in the current workout.
     pub elapsed_time_secs: Option<u16>,

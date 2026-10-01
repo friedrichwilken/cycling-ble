@@ -24,10 +24,33 @@ jobs:
       # dev headers to build its Linux/bluez backend — not present on the
       # runner image by default.
       - run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
+      # --all-targets includes the tests/contract integration-test target
+      # in both feature configurations.
       - run: cargo test --all-targets
       # zwift-click is opt-in and undocumented, but still gets tested so
       # it doesn't silently bit-rot while hidden.
       - run: cargo test --all-targets --features zwift-click
+
+  public-api:
+    name: public API snapshot
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      # cargo-public-api reads rustdoc JSON, which needs nightly. Both the
+      # nightly and the tool version are pinned (keep in sync with
+      # api_nightly / api_tool_version in the justfile) so the snapshot
+      # text only changes when they are bumped deliberately.
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-09-27
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo install --locked cargo-public-api --version 0.52.0
+      # Same diff as `just api-check`. On failure, run `just api` and
+      # commit public-api.txt if the change is intended.
+      - run: cargo +nightly-2026-09-27 public-api --all-features | diff -u public-api.txt -
 
   clippy:
     name: cargo clippy

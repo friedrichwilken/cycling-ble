@@ -1,0 +1,802 @@
+pub mod cycling_ble
+pub mod cycling_ble::csc
+#[non_exhaustive] pub struct cycling_ble::csc::CrankRevolutionData
+pub cycling_ble::csc::CrankRevolutionData::cumulative_revolutions: u16
+pub cycling_ble::csc::CrankRevolutionData::last_event_time_raw: u16
+impl core::clone::Clone for cycling_ble::csc::CrankRevolutionData
+pub fn cycling_ble::csc::CrankRevolutionData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::csc::CrankRevolutionData
+pub fn cycling_ble::csc::CrankRevolutionData::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::csc::CrankRevolutionData
+pub fn cycling_ble::csc::CrankRevolutionData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::csc::CrankRevolutionData
+impl core::marker::StructuralPartialEq for cycling_ble::csc::CrankRevolutionData
+impl core::marker::Freeze for cycling_ble::csc::CrankRevolutionData
+impl core::marker::Send for cycling_ble::csc::CrankRevolutionData
+impl core::marker::Sync for cycling_ble::csc::CrankRevolutionData
+impl core::marker::Unpin for cycling_ble::csc::CrankRevolutionData
+impl core::marker::UnsafeUnpin for cycling_ble::csc::CrankRevolutionData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::csc::CrankRevolutionData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::csc::CrankRevolutionData
+impl<T, U> core::convert::Into<U> for cycling_ble::csc::CrankRevolutionData where U: core::convert::From<T>
+pub fn cycling_ble::csc::CrankRevolutionData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::csc::CrankRevolutionData where U: core::convert::Into<T>
+pub type cycling_ble::csc::CrankRevolutionData::Error = never
+pub fn cycling_ble::csc::CrankRevolutionData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::csc::CrankRevolutionData where U: core::convert::TryFrom<T>
+pub type cycling_ble::csc::CrankRevolutionData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::csc::CrankRevolutionData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::csc::CrankRevolutionData where T: core::clone::Clone
+pub type cycling_ble::csc::CrankRevolutionData::Owned = T
+pub fn cycling_ble::csc::CrankRevolutionData::clone_into(&self, &mut T)
+pub fn cycling_ble::csc::CrankRevolutionData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::csc::CrankRevolutionData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::csc::CrankRevolutionData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::csc::CrankRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CrankRevolutionData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::csc::CrankRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CrankRevolutionData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::csc::CrankRevolutionData where T: core::clone::Clone
+pub unsafe fn cycling_ble::csc::CrankRevolutionData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::csc::CrankRevolutionData
+pub fn cycling_ble::csc::CrankRevolutionData::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::csc::CscMeasurement
+pub cycling_ble::csc::CscMeasurement::crank_revolutions: core::option::Option<cycling_ble::csc::CrankRevolutionData>
+pub cycling_ble::csc::CscMeasurement::wheel_revolutions: core::option::Option<cycling_ble::csc::WheelRevolutionData>
+impl core::clone::Clone for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::default() -> Self
+impl core::fmt::Debug for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::csc::CscMeasurement
+impl core::marker::StructuralPartialEq for cycling_ble::csc::CscMeasurement
+impl core::marker::Freeze for cycling_ble::csc::CscMeasurement
+impl core::marker::Send for cycling_ble::csc::CscMeasurement
+impl core::marker::Sync for cycling_ble::csc::CscMeasurement
+impl core::marker::Unpin for cycling_ble::csc::CscMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::csc::CscMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::csc::CscMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::csc::CscMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::csc::CscMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::csc::CscMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::csc::CscMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::csc::CscMeasurement::Error = never
+pub fn cycling_ble::csc::CscMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::csc::CscMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::csc::CscMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::csc::CscMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::csc::CscMeasurement where T: core::clone::Clone
+pub type cycling_ble::csc::CscMeasurement::Owned = T
+pub fn cycling_ble::csc::CscMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::csc::CscMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::csc::CscMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::csc::CscMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::csc::CscMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::csc::CscMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::csc::CscMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::csc::WheelRevolutionData
+pub cycling_ble::csc::WheelRevolutionData::cumulative_revolutions: u32
+pub cycling_ble::csc::WheelRevolutionData::last_event_time_raw: u16
+impl core::clone::Clone for cycling_ble::csc::WheelRevolutionData
+pub fn cycling_ble::csc::WheelRevolutionData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::csc::WheelRevolutionData
+pub fn cycling_ble::csc::WheelRevolutionData::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::csc::WheelRevolutionData
+pub fn cycling_ble::csc::WheelRevolutionData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::csc::WheelRevolutionData
+impl core::marker::StructuralPartialEq for cycling_ble::csc::WheelRevolutionData
+impl core::marker::Freeze for cycling_ble::csc::WheelRevolutionData
+impl core::marker::Send for cycling_ble::csc::WheelRevolutionData
+impl core::marker::Sync for cycling_ble::csc::WheelRevolutionData
+impl core::marker::Unpin for cycling_ble::csc::WheelRevolutionData
+impl core::marker::UnsafeUnpin for cycling_ble::csc::WheelRevolutionData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::csc::WheelRevolutionData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::csc::WheelRevolutionData
+impl<T, U> core::convert::Into<U> for cycling_ble::csc::WheelRevolutionData where U: core::convert::From<T>
+pub fn cycling_ble::csc::WheelRevolutionData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::csc::WheelRevolutionData where U: core::convert::Into<T>
+pub type cycling_ble::csc::WheelRevolutionData::Error = never
+pub fn cycling_ble::csc::WheelRevolutionData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::csc::WheelRevolutionData where U: core::convert::TryFrom<T>
+pub type cycling_ble::csc::WheelRevolutionData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::csc::WheelRevolutionData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::csc::WheelRevolutionData where T: core::clone::Clone
+pub type cycling_ble::csc::WheelRevolutionData::Owned = T
+pub fn cycling_ble::csc::WheelRevolutionData::clone_into(&self, &mut T)
+pub fn cycling_ble::csc::WheelRevolutionData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::csc::WheelRevolutionData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::csc::WheelRevolutionData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::csc::WheelRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::csc::WheelRevolutionData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::csc::WheelRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::csc::WheelRevolutionData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::csc::WheelRevolutionData where T: core::clone::Clone
+pub unsafe fn cycling_ble::csc::WheelRevolutionData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::csc::WheelRevolutionData
+pub fn cycling_ble::csc::WheelRevolutionData::from(T) -> T
+pub fn cycling_ble::csc::parse(&[u8]) -> core::result::Result<cycling_ble::csc::CscMeasurement, cycling_ble::ParseError>
+pub mod cycling_ble::ftms
+#[non_exhaustive] pub struct cycling_ble::ftms::IndoorBikeData
+pub cycling_ble::ftms::IndoorBikeData::average_cadence: core::option::Option<f32>
+pub cycling_ble::ftms::IndoorBikeData::average_power: core::option::Option<i16>
+pub cycling_ble::ftms::IndoorBikeData::average_speed: core::option::Option<f32>
+pub cycling_ble::ftms::IndoorBikeData::elapsed_time_secs: core::option::Option<u16>
+pub cycling_ble::ftms::IndoorBikeData::energy_per_hour: core::option::Option<u16>
+pub cycling_ble::ftms::IndoorBikeData::energy_per_minute: core::option::Option<u8>
+pub cycling_ble::ftms::IndoorBikeData::heart_rate_bpm: core::option::Option<u8>
+pub cycling_ble::ftms::IndoorBikeData::instantaneous_cadence: core::option::Option<f32>
+pub cycling_ble::ftms::IndoorBikeData::instantaneous_power: core::option::Option<i16>
+pub cycling_ble::ftms::IndoorBikeData::instantaneous_speed: core::option::Option<f32>
+pub cycling_ble::ftms::IndoorBikeData::metabolic_equivalent: core::option::Option<f32>
+pub cycling_ble::ftms::IndoorBikeData::remaining_time_secs: core::option::Option<u16>
+pub cycling_ble::ftms::IndoorBikeData::resistance_level: core::option::Option<i16>
+pub cycling_ble::ftms::IndoorBikeData::total_distance: core::option::Option<u32>
+pub cycling_ble::ftms::IndoorBikeData::total_energy: core::option::Option<u16>
+impl core::clone::Clone for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::default() -> Self
+impl core::fmt::Debug for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::ftms::IndoorBikeData
+impl core::marker::StructuralPartialEq for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Freeze for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Send for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Sync for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Unpin for cycling_ble::ftms::IndoorBikeData
+impl core::marker::UnsafeUnpin for cycling_ble::ftms::IndoorBikeData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::ftms::IndoorBikeData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::ftms::IndoorBikeData
+impl<T, U> core::convert::Into<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::From<T>
+pub fn cycling_ble::ftms::IndoorBikeData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::Into<T>
+pub type cycling_ble::ftms::IndoorBikeData::Error = never
+pub fn cycling_ble::ftms::IndoorBikeData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::TryFrom<T>
+pub type cycling_ble::ftms::IndoorBikeData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::ftms::IndoorBikeData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::ftms::IndoorBikeData where T: core::clone::Clone
+pub type cycling_ble::ftms::IndoorBikeData::Owned = T
+pub fn cycling_ble::ftms::IndoorBikeData::clone_into(&self, &mut T)
+pub fn cycling_ble::ftms::IndoorBikeData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::ftms::IndoorBikeData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::ftms::IndoorBikeData where T: ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::ftms::IndoorBikeData where T: ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::ftms::IndoorBikeData where T: core::clone::Clone
+pub unsafe fn cycling_ble::ftms::IndoorBikeData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::from(T) -> T
+pub fn cycling_ble::ftms::parse(&[u8]) -> core::result::Result<cycling_ble::ftms::IndoorBikeData, cycling_ble::ParseError>
+pub mod cycling_ble::heart_rate
+#[non_exhaustive] pub struct cycling_ble::heart_rate::HeartRateMeasurement
+pub cycling_ble::heart_rate::HeartRateMeasurement::bpm: u16
+pub cycling_ble::heart_rate::HeartRateMeasurement::energy_expended_kj: core::option::Option<u16>
+pub cycling_ble::heart_rate::HeartRateMeasurement::rr_intervals_secs: alloc::vec::Vec<f32>
+pub cycling_ble::heart_rate::HeartRateMeasurement::sensor_contact_detected: core::option::Option<bool>
+impl core::clone::Clone for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::StructuralPartialEq for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Freeze for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Send for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Sync for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Unpin for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::heart_rate::HeartRateMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Error = never
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::heart_rate::HeartRateMeasurement where T: core::clone::Clone
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Owned = T
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::heart_rate::HeartRateMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::heart_rate::HeartRateMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::heart_rate::HeartRateMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::heart_rate::HeartRateMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::heart_rate::HeartRateMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::from(T) -> T
+pub fn cycling_ble::heart_rate::parse(&[u8]) -> core::result::Result<cycling_ble::heart_rate::HeartRateMeasurement, cycling_ble::ParseError>
+pub mod cycling_ble::power
+#[non_exhaustive] pub enum cycling_ble::power::PedalPowerBalanceReference
+pub cycling_ble::power::PedalPowerBalanceReference::Left
+pub cycling_ble::power::PedalPowerBalanceReference::Unknown
+impl core::clone::Clone for cycling_ble::power::PedalPowerBalanceReference
+pub fn cycling_ble::power::PedalPowerBalanceReference::clone(&self) -> Self
+impl core::cmp::Eq for cycling_ble::power::PedalPowerBalanceReference
+impl core::cmp::PartialEq for cycling_ble::power::PedalPowerBalanceReference
+pub fn cycling_ble::power::PedalPowerBalanceReference::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::PedalPowerBalanceReference
+pub fn cycling_ble::power::PedalPowerBalanceReference::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::StructuralPartialEq for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::Freeze for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::Send for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::Sync for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::Unpin for cycling_ble::power::PedalPowerBalanceReference
+impl core::marker::UnsafeUnpin for cycling_ble::power::PedalPowerBalanceReference
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::PedalPowerBalanceReference
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::PedalPowerBalanceReference
+impl<T, U> core::convert::Into<U> for cycling_ble::power::PedalPowerBalanceReference where U: core::convert::From<T>
+pub fn cycling_ble::power::PedalPowerBalanceReference::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::PedalPowerBalanceReference where U: core::convert::Into<T>
+pub type cycling_ble::power::PedalPowerBalanceReference::Error = never
+pub fn cycling_ble::power::PedalPowerBalanceReference::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::PedalPowerBalanceReference where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::PedalPowerBalanceReference::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::PedalPowerBalanceReference::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::PedalPowerBalanceReference where T: core::clone::Clone
+pub type cycling_ble::power::PedalPowerBalanceReference::Owned = T
+pub fn cycling_ble::power::PedalPowerBalanceReference::clone_into(&self, &mut T)
+pub fn cycling_ble::power::PedalPowerBalanceReference::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::PedalPowerBalanceReference where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalanceReference::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::PedalPowerBalanceReference where T: ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalanceReference::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::PedalPowerBalanceReference where T: ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalanceReference::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::PedalPowerBalanceReference where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::PedalPowerBalanceReference::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::PedalPowerBalanceReference
+pub fn cycling_ble::power::PedalPowerBalanceReference::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::power::CrankRevolutionData
+pub cycling_ble::power::CrankRevolutionData::cumulative_revolutions: u16
+pub cycling_ble::power::CrankRevolutionData::last_event_time_raw: u16
+impl core::clone::Clone for cycling_ble::power::CrankRevolutionData
+pub fn cycling_ble::power::CrankRevolutionData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::power::CrankRevolutionData
+pub fn cycling_ble::power::CrankRevolutionData::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::CrankRevolutionData
+pub fn cycling_ble::power::CrankRevolutionData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::power::CrankRevolutionData
+impl core::marker::StructuralPartialEq for cycling_ble::power::CrankRevolutionData
+impl core::marker::Freeze for cycling_ble::power::CrankRevolutionData
+impl core::marker::Send for cycling_ble::power::CrankRevolutionData
+impl core::marker::Sync for cycling_ble::power::CrankRevolutionData
+impl core::marker::Unpin for cycling_ble::power::CrankRevolutionData
+impl core::marker::UnsafeUnpin for cycling_ble::power::CrankRevolutionData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::CrankRevolutionData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::CrankRevolutionData
+impl<T, U> core::convert::Into<U> for cycling_ble::power::CrankRevolutionData where U: core::convert::From<T>
+pub fn cycling_ble::power::CrankRevolutionData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::CrankRevolutionData where U: core::convert::Into<T>
+pub type cycling_ble::power::CrankRevolutionData::Error = never
+pub fn cycling_ble::power::CrankRevolutionData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::CrankRevolutionData where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::CrankRevolutionData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::CrankRevolutionData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::CrankRevolutionData where T: core::clone::Clone
+pub type cycling_ble::power::CrankRevolutionData::Owned = T
+pub fn cycling_ble::power::CrankRevolutionData::clone_into(&self, &mut T)
+pub fn cycling_ble::power::CrankRevolutionData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::CrankRevolutionData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::CrankRevolutionData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::CrankRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::power::CrankRevolutionData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::CrankRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::power::CrankRevolutionData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::CrankRevolutionData where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::CrankRevolutionData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::CrankRevolutionData
+pub fn cycling_ble::power::CrankRevolutionData::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::power::CyclingPowerMeasurement
+pub cycling_ble::power::CyclingPowerMeasurement::accumulated_energy_kj: core::option::Option<u16>
+pub cycling_ble::power::CyclingPowerMeasurement::accumulated_torque_nm: core::option::Option<f32>
+pub cycling_ble::power::CyclingPowerMeasurement::bottom_dead_spot_angle_deg: core::option::Option<u16>
+pub cycling_ble::power::CyclingPowerMeasurement::crank_revolutions: core::option::Option<cycling_ble::power::CrankRevolutionData>
+pub cycling_ble::power::CyclingPowerMeasurement::extreme_force_newtons: core::option::Option<cycling_ble::power::MinMax<i16>>
+pub cycling_ble::power::CyclingPowerMeasurement::extreme_torque_nm: core::option::Option<cycling_ble::power::MinMax<i16>>
+pub cycling_ble::power::CyclingPowerMeasurement::instantaneous_power_watts: i16
+pub cycling_ble::power::CyclingPowerMeasurement::pedal_power_balance: core::option::Option<cycling_ble::power::PedalPowerBalance>
+pub cycling_ble::power::CyclingPowerMeasurement::top_dead_spot_angle_deg: core::option::Option<u16>
+pub cycling_ble::power::CyclingPowerMeasurement::wheel_revolutions: core::option::Option<cycling_ble::power::WheelRevolutionData>
+impl core::clone::Clone for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::StructuralPartialEq for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Freeze for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Send for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Sync for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Unpin for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::power::CyclingPowerMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::CyclingPowerMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::CyclingPowerMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::power::CyclingPowerMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::power::CyclingPowerMeasurement::Error = never
+pub fn cycling_ble::power::CyclingPowerMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::CyclingPowerMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::CyclingPowerMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::CyclingPowerMeasurement where T: core::clone::Clone
+pub type cycling_ble::power::CyclingPowerMeasurement::Owned = T
+pub fn cycling_ble::power::CyclingPowerMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::power::CyclingPowerMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::CyclingPowerMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::CyclingPowerMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::CyclingPowerMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::CyclingPowerMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::CyclingPowerMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::power::MinMax<T>
+pub cycling_ble::power::MinMax::max: T
+pub cycling_ble::power::MinMax::min: T
+impl<T: core::clone::Clone> core::clone::Clone for cycling_ble::power::MinMax<T>
+pub fn cycling_ble::power::MinMax<T>::clone(&self) -> Self
+impl<T: core::cmp::PartialEq> core::cmp::PartialEq for cycling_ble::power::MinMax<T>
+pub fn cycling_ble::power::MinMax<T>::eq(&self, &Self) -> bool
+impl<T: core::cmp::PartialEq> core::marker::StructuralPartialEq for cycling_ble::power::MinMax<T>
+impl<T: core::fmt::Debug> core::fmt::Debug for cycling_ble::power::MinMax<T>
+pub fn cycling_ble::power::MinMax<T>::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl<T: core::marker::Copy> core::marker::Copy for cycling_ble::power::MinMax<T>
+impl<T> core::marker::Freeze for cycling_ble::power::MinMax<T> where T: core::marker::Freeze + core::marker::Freeze
+impl<T> core::marker::Send for cycling_ble::power::MinMax<T> where T: core::marker::Send + core::marker::Send
+impl<T> core::marker::Sync for cycling_ble::power::MinMax<T> where T: core::marker::Sync + core::marker::Sync
+impl<T> core::marker::Unpin for cycling_ble::power::MinMax<T> where T: core::marker::Unpin + core::marker::Unpin
+impl<T> core::marker::UnsafeUnpin for cycling_ble::power::MinMax<T> where T: core::marker::UnsafeUnpin + core::marker::UnsafeUnpin
+impl<T> core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::MinMax<T> where T: core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::RefUnwindSafe
+impl<T> core::panic::unwind_safe::UnwindSafe for cycling_ble::power::MinMax<T> where T: core::panic::unwind_safe::UnwindSafe + core::panic::unwind_safe::UnwindSafe
+impl<T, U> core::convert::Into<U> for cycling_ble::power::MinMax<T> where U: core::convert::From<T>
+pub fn cycling_ble::power::MinMax<T>::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::MinMax<T> where U: core::convert::Into<T>
+pub type cycling_ble::power::MinMax<T>::Error = never
+pub fn cycling_ble::power::MinMax<T>::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::MinMax<T> where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::MinMax<T>::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::MinMax<T>::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::MinMax<T> where T: core::clone::Clone
+pub type cycling_ble::power::MinMax<T>::Owned = T
+pub fn cycling_ble::power::MinMax<T>::clone_into(&self, &mut T)
+pub fn cycling_ble::power::MinMax<T>::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::MinMax<T> where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::MinMax<T>::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::MinMax<T> where T: ?core::marker::Sized
+pub fn cycling_ble::power::MinMax<T>::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::MinMax<T> where T: ?core::marker::Sized
+pub fn cycling_ble::power::MinMax<T>::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::MinMax<T> where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::MinMax<T>::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::MinMax<T>
+pub fn cycling_ble::power::MinMax<T>::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::power::PedalPowerBalance
+pub cycling_ble::power::PedalPowerBalance::percent: f32
+pub cycling_ble::power::PedalPowerBalance::reference: cycling_ble::power::PedalPowerBalanceReference
+impl core::clone::Clone for cycling_ble::power::PedalPowerBalance
+pub fn cycling_ble::power::PedalPowerBalance::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::power::PedalPowerBalance
+pub fn cycling_ble::power::PedalPowerBalance::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::PedalPowerBalance
+pub fn cycling_ble::power::PedalPowerBalance::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::power::PedalPowerBalance
+impl core::marker::StructuralPartialEq for cycling_ble::power::PedalPowerBalance
+impl core::marker::Freeze for cycling_ble::power::PedalPowerBalance
+impl core::marker::Send for cycling_ble::power::PedalPowerBalance
+impl core::marker::Sync for cycling_ble::power::PedalPowerBalance
+impl core::marker::Unpin for cycling_ble::power::PedalPowerBalance
+impl core::marker::UnsafeUnpin for cycling_ble::power::PedalPowerBalance
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::PedalPowerBalance
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::PedalPowerBalance
+impl<T, U> core::convert::Into<U> for cycling_ble::power::PedalPowerBalance where U: core::convert::From<T>
+pub fn cycling_ble::power::PedalPowerBalance::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::PedalPowerBalance where U: core::convert::Into<T>
+pub type cycling_ble::power::PedalPowerBalance::Error = never
+pub fn cycling_ble::power::PedalPowerBalance::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::PedalPowerBalance where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::PedalPowerBalance::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::PedalPowerBalance::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::PedalPowerBalance where T: core::clone::Clone
+pub type cycling_ble::power::PedalPowerBalance::Owned = T
+pub fn cycling_ble::power::PedalPowerBalance::clone_into(&self, &mut T)
+pub fn cycling_ble::power::PedalPowerBalance::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::PedalPowerBalance where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalance::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::PedalPowerBalance where T: ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalance::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::PedalPowerBalance where T: ?core::marker::Sized
+pub fn cycling_ble::power::PedalPowerBalance::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::PedalPowerBalance where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::PedalPowerBalance::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::PedalPowerBalance
+pub fn cycling_ble::power::PedalPowerBalance::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::power::WheelRevolutionData
+pub cycling_ble::power::WheelRevolutionData::cumulative_revolutions: u32
+pub cycling_ble::power::WheelRevolutionData::last_event_time_raw: u16
+impl core::clone::Clone for cycling_ble::power::WheelRevolutionData
+pub fn cycling_ble::power::WheelRevolutionData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::power::WheelRevolutionData
+pub fn cycling_ble::power::WheelRevolutionData::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::WheelRevolutionData
+pub fn cycling_ble::power::WheelRevolutionData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::power::WheelRevolutionData
+impl core::marker::StructuralPartialEq for cycling_ble::power::WheelRevolutionData
+impl core::marker::Freeze for cycling_ble::power::WheelRevolutionData
+impl core::marker::Send for cycling_ble::power::WheelRevolutionData
+impl core::marker::Sync for cycling_ble::power::WheelRevolutionData
+impl core::marker::Unpin for cycling_ble::power::WheelRevolutionData
+impl core::marker::UnsafeUnpin for cycling_ble::power::WheelRevolutionData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::WheelRevolutionData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::WheelRevolutionData
+impl<T, U> core::convert::Into<U> for cycling_ble::power::WheelRevolutionData where U: core::convert::From<T>
+pub fn cycling_ble::power::WheelRevolutionData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::WheelRevolutionData where U: core::convert::Into<T>
+pub type cycling_ble::power::WheelRevolutionData::Error = never
+pub fn cycling_ble::power::WheelRevolutionData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::WheelRevolutionData where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::WheelRevolutionData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::WheelRevolutionData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::WheelRevolutionData where T: core::clone::Clone
+pub type cycling_ble::power::WheelRevolutionData::Owned = T
+pub fn cycling_ble::power::WheelRevolutionData::clone_into(&self, &mut T)
+pub fn cycling_ble::power::WheelRevolutionData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::WheelRevolutionData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::WheelRevolutionData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::WheelRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::power::WheelRevolutionData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::WheelRevolutionData where T: ?core::marker::Sized
+pub fn cycling_ble::power::WheelRevolutionData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::WheelRevolutionData where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::WheelRevolutionData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::WheelRevolutionData
+pub fn cycling_ble::power::WheelRevolutionData::from(T) -> T
+pub fn cycling_ble::power::parse(&[u8]) -> core::result::Result<cycling_ble::power::CyclingPowerMeasurement, cycling_ble::ParseError>
+pub mod cycling_ble::zwift_click
+#[non_exhaustive] pub struct cycling_ble::zwift_click::ClickButtonState
+pub cycling_ble::zwift_click::ClickButtonState::minus_pressed: bool
+pub cycling_ble::zwift_click::ClickButtonState::plus_pressed: bool
+impl core::clone::Clone for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::clone(&self) -> Self
+impl core::cmp::Eq for cycling_ble::zwift_click::ClickButtonState
+impl core::cmp::PartialEq for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::default() -> Self
+impl core::fmt::Debug for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::StructuralPartialEq for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Freeze for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Send for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Sync for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Unpin for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::UnsafeUnpin for cycling_ble::zwift_click::ClickButtonState
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::zwift_click::ClickButtonState
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::zwift_click::ClickButtonState
+impl<T, U> core::convert::Into<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::From<T>
+pub fn cycling_ble::zwift_click::ClickButtonState::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::Into<T>
+pub type cycling_ble::zwift_click::ClickButtonState::Error = never
+pub fn cycling_ble::zwift_click::ClickButtonState::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::TryFrom<T>
+pub type cycling_ble::zwift_click::ClickButtonState::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::zwift_click::ClickButtonState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::zwift_click::ClickButtonState where T: core::clone::Clone
+pub type cycling_ble::zwift_click::ClickButtonState::Owned = T
+pub fn cycling_ble::zwift_click::ClickButtonState::clone_into(&self, &mut T)
+pub fn cycling_ble::zwift_click::ClickButtonState::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::zwift_click::ClickButtonState where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::zwift_click::ClickButtonState where T: ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::zwift_click::ClickButtonState where T: ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::zwift_click::ClickButtonState where T: core::clone::Clone
+pub unsafe fn cycling_ble::zwift_click::ClickButtonState::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::from(T) -> T
+pub const cycling_ble::zwift_click::HANDSHAKE_REQUEST: &[u8]
+pub fn cycling_ble::zwift_click::is_handshake_ack(&[u8]) -> bool
+pub fn cycling_ble::zwift_click::parse(&[u8]) -> core::result::Result<core::option::Option<cycling_ble::zwift_click::ClickButtonState>, cycling_ble::ParseError>
+#[non_exhaustive] pub struct cycling_ble::ClickButtonState
+pub cycling_ble::ClickButtonState::minus_pressed: bool
+pub cycling_ble::ClickButtonState::plus_pressed: bool
+impl core::clone::Clone for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::clone(&self) -> Self
+impl core::cmp::Eq for cycling_ble::zwift_click::ClickButtonState
+impl core::cmp::PartialEq for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::default() -> Self
+impl core::fmt::Debug for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::StructuralPartialEq for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Freeze for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Send for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Sync for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::Unpin for cycling_ble::zwift_click::ClickButtonState
+impl core::marker::UnsafeUnpin for cycling_ble::zwift_click::ClickButtonState
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::zwift_click::ClickButtonState
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::zwift_click::ClickButtonState
+impl<T, U> core::convert::Into<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::From<T>
+pub fn cycling_ble::zwift_click::ClickButtonState::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::Into<T>
+pub type cycling_ble::zwift_click::ClickButtonState::Error = never
+pub fn cycling_ble::zwift_click::ClickButtonState::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::zwift_click::ClickButtonState where U: core::convert::TryFrom<T>
+pub type cycling_ble::zwift_click::ClickButtonState::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::zwift_click::ClickButtonState::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::zwift_click::ClickButtonState where T: core::clone::Clone
+pub type cycling_ble::zwift_click::ClickButtonState::Owned = T
+pub fn cycling_ble::zwift_click::ClickButtonState::clone_into(&self, &mut T)
+pub fn cycling_ble::zwift_click::ClickButtonState::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::zwift_click::ClickButtonState where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::zwift_click::ClickButtonState where T: ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::zwift_click::ClickButtonState where T: ?core::marker::Sized
+pub fn cycling_ble::zwift_click::ClickButtonState::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::zwift_click::ClickButtonState where T: core::clone::Clone
+pub unsafe fn cycling_ble::zwift_click::ClickButtonState::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::zwift_click::ClickButtonState
+pub fn cycling_ble::zwift_click::ClickButtonState::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::CscMeasurement
+pub cycling_ble::CscMeasurement::crank_revolutions: core::option::Option<cycling_ble::csc::CrankRevolutionData>
+pub cycling_ble::CscMeasurement::wheel_revolutions: core::option::Option<cycling_ble::csc::WheelRevolutionData>
+impl core::clone::Clone for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::default() -> Self
+impl core::fmt::Debug for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::csc::CscMeasurement
+impl core::marker::StructuralPartialEq for cycling_ble::csc::CscMeasurement
+impl core::marker::Freeze for cycling_ble::csc::CscMeasurement
+impl core::marker::Send for cycling_ble::csc::CscMeasurement
+impl core::marker::Sync for cycling_ble::csc::CscMeasurement
+impl core::marker::Unpin for cycling_ble::csc::CscMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::csc::CscMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::csc::CscMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::csc::CscMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::csc::CscMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::csc::CscMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::csc::CscMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::csc::CscMeasurement::Error = never
+pub fn cycling_ble::csc::CscMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::csc::CscMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::csc::CscMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::csc::CscMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::csc::CscMeasurement where T: core::clone::Clone
+pub type cycling_ble::csc::CscMeasurement::Owned = T
+pub fn cycling_ble::csc::CscMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::csc::CscMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::csc::CscMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::csc::CscMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::csc::CscMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::csc::CscMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::csc::CscMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::csc::CscMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::csc::CscMeasurement
+pub fn cycling_ble::csc::CscMeasurement::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::CyclingPowerMeasurement
+pub cycling_ble::CyclingPowerMeasurement::accumulated_energy_kj: core::option::Option<u16>
+pub cycling_ble::CyclingPowerMeasurement::accumulated_torque_nm: core::option::Option<f32>
+pub cycling_ble::CyclingPowerMeasurement::bottom_dead_spot_angle_deg: core::option::Option<u16>
+pub cycling_ble::CyclingPowerMeasurement::crank_revolutions: core::option::Option<cycling_ble::power::CrankRevolutionData>
+pub cycling_ble::CyclingPowerMeasurement::extreme_force_newtons: core::option::Option<cycling_ble::power::MinMax<i16>>
+pub cycling_ble::CyclingPowerMeasurement::extreme_torque_nm: core::option::Option<cycling_ble::power::MinMax<i16>>
+pub cycling_ble::CyclingPowerMeasurement::instantaneous_power_watts: i16
+pub cycling_ble::CyclingPowerMeasurement::pedal_power_balance: core::option::Option<cycling_ble::power::PedalPowerBalance>
+pub cycling_ble::CyclingPowerMeasurement::top_dead_spot_angle_deg: core::option::Option<u16>
+pub cycling_ble::CyclingPowerMeasurement::wheel_revolutions: core::option::Option<cycling_ble::power::WheelRevolutionData>
+impl core::clone::Clone for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::StructuralPartialEq for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Freeze for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Send for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Sync for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::Unpin for cycling_ble::power::CyclingPowerMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::power::CyclingPowerMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::power::CyclingPowerMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::power::CyclingPowerMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::power::CyclingPowerMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::power::CyclingPowerMeasurement::Error = never
+pub fn cycling_ble::power::CyclingPowerMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::power::CyclingPowerMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::power::CyclingPowerMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::power::CyclingPowerMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::power::CyclingPowerMeasurement where T: core::clone::Clone
+pub type cycling_ble::power::CyclingPowerMeasurement::Owned = T
+pub fn cycling_ble::power::CyclingPowerMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::power::CyclingPowerMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::power::CyclingPowerMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::power::CyclingPowerMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::power::CyclingPowerMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::power::CyclingPowerMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::power::CyclingPowerMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::power::CyclingPowerMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::power::CyclingPowerMeasurement
+pub fn cycling_ble::power::CyclingPowerMeasurement::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::HeartRateMeasurement
+pub cycling_ble::HeartRateMeasurement::bpm: u16
+pub cycling_ble::HeartRateMeasurement::energy_expended_kj: core::option::Option<u16>
+pub cycling_ble::HeartRateMeasurement::rr_intervals_secs: alloc::vec::Vec<f32>
+pub cycling_ble::HeartRateMeasurement::sensor_contact_detected: core::option::Option<bool>
+impl core::clone::Clone for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::eq(&self, &Self) -> bool
+impl core::fmt::Debug for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::StructuralPartialEq for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Freeze for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Send for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Sync for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::Unpin for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::marker::UnsafeUnpin for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::heart_rate::HeartRateMeasurement
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::heart_rate::HeartRateMeasurement
+impl<T, U> core::convert::Into<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::From<T>
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::Into<T>
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Error = never
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::heart_rate::HeartRateMeasurement where U: core::convert::TryFrom<T>
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::heart_rate::HeartRateMeasurement where T: core::clone::Clone
+pub type cycling_ble::heart_rate::HeartRateMeasurement::Owned = T
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::clone_into(&self, &mut T)
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::heart_rate::HeartRateMeasurement where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::heart_rate::HeartRateMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::heart_rate::HeartRateMeasurement where T: ?core::marker::Sized
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::heart_rate::HeartRateMeasurement where T: core::clone::Clone
+pub unsafe fn cycling_ble::heart_rate::HeartRateMeasurement::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::heart_rate::HeartRateMeasurement
+pub fn cycling_ble::heart_rate::HeartRateMeasurement::from(T) -> T
+#[non_exhaustive] pub struct cycling_ble::IndoorBikeData
+pub cycling_ble::IndoorBikeData::average_cadence: core::option::Option<f32>
+pub cycling_ble::IndoorBikeData::average_power: core::option::Option<i16>
+pub cycling_ble::IndoorBikeData::average_speed: core::option::Option<f32>
+pub cycling_ble::IndoorBikeData::elapsed_time_secs: core::option::Option<u16>
+pub cycling_ble::IndoorBikeData::energy_per_hour: core::option::Option<u16>
+pub cycling_ble::IndoorBikeData::energy_per_minute: core::option::Option<u8>
+pub cycling_ble::IndoorBikeData::heart_rate_bpm: core::option::Option<u8>
+pub cycling_ble::IndoorBikeData::instantaneous_cadence: core::option::Option<f32>
+pub cycling_ble::IndoorBikeData::instantaneous_power: core::option::Option<i16>
+pub cycling_ble::IndoorBikeData::instantaneous_speed: core::option::Option<f32>
+pub cycling_ble::IndoorBikeData::metabolic_equivalent: core::option::Option<f32>
+pub cycling_ble::IndoorBikeData::remaining_time_secs: core::option::Option<u16>
+pub cycling_ble::IndoorBikeData::resistance_level: core::option::Option<i16>
+pub cycling_ble::IndoorBikeData::total_distance: core::option::Option<u32>
+pub cycling_ble::IndoorBikeData::total_energy: core::option::Option<u16>
+impl core::clone::Clone for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::clone(&self) -> Self
+impl core::cmp::PartialEq for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::eq(&self, &Self) -> bool
+impl core::default::Default for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::default() -> Self
+impl core::fmt::Debug for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::ftms::IndoorBikeData
+impl core::marker::StructuralPartialEq for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Freeze for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Send for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Sync for cycling_ble::ftms::IndoorBikeData
+impl core::marker::Unpin for cycling_ble::ftms::IndoorBikeData
+impl core::marker::UnsafeUnpin for cycling_ble::ftms::IndoorBikeData
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::ftms::IndoorBikeData
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::ftms::IndoorBikeData
+impl<T, U> core::convert::Into<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::From<T>
+pub fn cycling_ble::ftms::IndoorBikeData::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::Into<T>
+pub type cycling_ble::ftms::IndoorBikeData::Error = never
+pub fn cycling_ble::ftms::IndoorBikeData::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::ftms::IndoorBikeData where U: core::convert::TryFrom<T>
+pub type cycling_ble::ftms::IndoorBikeData::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::ftms::IndoorBikeData::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::ftms::IndoorBikeData where T: core::clone::Clone
+pub type cycling_ble::ftms::IndoorBikeData::Owned = T
+pub fn cycling_ble::ftms::IndoorBikeData::clone_into(&self, &mut T)
+pub fn cycling_ble::ftms::IndoorBikeData::to_owned(&self) -> T
+impl<T> core::any::Any for cycling_ble::ftms::IndoorBikeData where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::ftms::IndoorBikeData where T: ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::ftms::IndoorBikeData where T: ?core::marker::Sized
+pub fn cycling_ble::ftms::IndoorBikeData::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::ftms::IndoorBikeData where T: core::clone::Clone
+pub unsafe fn cycling_ble::ftms::IndoorBikeData::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::ftms::IndoorBikeData
+pub fn cycling_ble::ftms::IndoorBikeData::from(T) -> T
+pub struct cycling_ble::ParseError
+pub cycling_ble::ParseError::got: usize
+pub cycling_ble::ParseError::needed: usize
+impl core::clone::Clone for cycling_ble::ParseError
+pub fn cycling_ble::ParseError::clone(&self) -> Self
+impl core::cmp::Eq for cycling_ble::ParseError
+impl core::cmp::PartialEq for cycling_ble::ParseError
+pub fn cycling_ble::ParseError::eq(&self, &Self) -> bool
+impl core::error::Error for cycling_ble::ParseError
+impl core::fmt::Debug for cycling_ble::ParseError
+pub fn cycling_ble::ParseError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::fmt::Display for cycling_ble::ParseError
+pub fn cycling_ble::ParseError::fmt(&self, &mut core::fmt::Formatter<'_>) -> core::fmt::Result
+impl core::marker::Copy for cycling_ble::ParseError
+impl core::marker::StructuralPartialEq for cycling_ble::ParseError
+impl core::marker::Freeze for cycling_ble::ParseError
+impl core::marker::Send for cycling_ble::ParseError
+impl core::marker::Sync for cycling_ble::ParseError
+impl core::marker::Unpin for cycling_ble::ParseError
+impl core::marker::UnsafeUnpin for cycling_ble::ParseError
+impl core::panic::unwind_safe::RefUnwindSafe for cycling_ble::ParseError
+impl core::panic::unwind_safe::UnwindSafe for cycling_ble::ParseError
+impl<T, U> core::convert::Into<U> for cycling_ble::ParseError where U: core::convert::From<T>
+pub fn cycling_ble::ParseError::into(self) -> U
+impl<T, U> core::convert::TryFrom<U> for cycling_ble::ParseError where U: core::convert::Into<T>
+pub type cycling_ble::ParseError::Error = never
+pub fn cycling_ble::ParseError::try_from(U) -> core::result::Result<T, never>
+impl<T, U> core::convert::TryInto<U> for cycling_ble::ParseError where U: core::convert::TryFrom<T>
+pub type cycling_ble::ParseError::Error = <U as core::convert::TryFrom<T>>::Error
+pub fn cycling_ble::ParseError::try_into(self) -> core::result::Result<U, <U as core::convert::TryFrom<T>>::Error>
+impl<T> alloc::borrow::ToOwned for cycling_ble::ParseError where T: core::clone::Clone
+pub type cycling_ble::ParseError::Owned = T
+pub fn cycling_ble::ParseError::clone_into(&self, &mut T)
+pub fn cycling_ble::ParseError::to_owned(&self) -> T
+impl<T> alloc::string::ToString for cycling_ble::ParseError where T: core::fmt::Display + ?core::marker::Sized
+pub fn cycling_ble::ParseError::to_string(&self) -> alloc::string::String
+impl<T> core::any::Any for cycling_ble::ParseError where T: 'static + ?core::marker::Sized
+pub fn cycling_ble::ParseError::type_id(&self) -> core::any::TypeId
+impl<T> core::borrow::Borrow<T> for cycling_ble::ParseError where T: ?core::marker::Sized
+pub fn cycling_ble::ParseError::borrow(&self) -> &T
+impl<T> core::borrow::BorrowMut<T> for cycling_ble::ParseError where T: ?core::marker::Sized
+pub fn cycling_ble::ParseError::borrow_mut(&mut self) -> &mut T
+impl<T> core::clone::CloneToUninit for cycling_ble::ParseError where T: core::clone::Clone
+pub unsafe fn cycling_ble::ParseError::clone_to_uninit(&self, *mut u8)
+impl<T> core::convert::From<T> for cycling_ble::ParseError
+pub fn cycling_ble::ParseError::from(T) -> T
+pub const cycling_ble::CP_WHEEL_EVENT_TIME_HZ: f32
+pub const cycling_ble::CRANK_EVENT_TIME_HZ: f32
+pub const cycling_ble::CRANK_REVOLUTIONS_WRAP_AT: u64
+pub const cycling_ble::CSC_WHEEL_EVENT_TIME_HZ: f32
+pub const cycling_ble::WHEEL_REVOLUTIONS_WRAP_AT: u64
+pub fn cycling_ble::revolutions_per_minute(u32, u16, u32, u16, u64, f32) -> core::option::Option<f32>

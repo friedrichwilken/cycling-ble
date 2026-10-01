@@ -1,6 +1,6 @@
 [package]
 name = "cycling-ble"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.74"
 description = "Parsers for Bluetooth LE cycling GATT profiles: Cycling Power, Heart Rate, CSC, FTMS Indoor Bike Data. Pure byte-parsing, no BLE transport dependency."
